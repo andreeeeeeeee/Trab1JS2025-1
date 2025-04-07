@@ -100,7 +100,6 @@ function editElement(element) {
     elementContent.classList.remove('d-none');
     elementImage.classList.add('d-none');
   } else if (element.querySelector('img')) {
-    console.log(element.querySelector('img').src);
     elementType.value = 'image';
     elementImage.value = element.querySelector('img').src;
     textColor.parentElement.classList.add('d-none');
