@@ -50,12 +50,13 @@ addElementButton.addEventListener('click', () => {
   element.style.color = textColor.value;
 
   if (elementType.value === 'text') {
+    element.querySelector('img') && element.removeChild(element.querySelector('img'));
     element.innerHTML = '';
     const text = document.createElement('p');
     text.textContent = elementContent.value;
     element.appendChild(text);
   } else if (elementType.value === 'image') {
-    element.removeChild(element.querySelector('p'));
+    element.querySelector('p') && element.removeChild(element.querySelector('p'));
     const reader = new FileReader();
     reader.onload = function (e) {
       const img = document.createElement('img');
